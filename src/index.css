@@ -1,3 +1,45 @@
+*{
+	padding: 0;
+	margin: 0;
+	border: 0;
+    font-family: 'Ubuntu', sans-serif;
+}
+*,*:before,*:after{
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+
+nav,footer,header,aside{display: block;}
+
+html,body{
+	height: 100%;
+	width: 100%;
+	font-size: 100%;
+	line-height: 1;
+	font-size: 14px;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+input,button,textarea{font-family:'Ubuntu', sans-serif;}
+
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding:0;border:0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+
+h1,h2,h3,h4,h5,h6{font-size:'Ubuntu', sans-serif;font-weight: 400;}
+
+
+
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -11,3 +53,249 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.App {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.header {
+  width: 100%;
+  padding: 10px 30px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+
+}
+
+.avatar {
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+
+.footer {
+  width: 100%;
+  padding: 10px 30px;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.link {
+  color:rgb(134, 28, 28)
+}
+
+.content {
+  flex: 1;
+  
+  display: flex;
+  flex-direction: row;
+}
+
+.filter-panel {
+  width: 400px;
+
+  border-right: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.card-area {
+  width: 100%;
+
+  padding: 20px 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+
+  justify-items: center; 
+}
+
+
+
+.filter-panel {
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-transform: capitalize;
+}
+
+.filter-panel > * {
+  width: 80%;
+  padding-bottom: 20px;
+}
+
+.filter-title {
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  
+  padding: 20px 0px;
+}
+
+.checkboxes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.btn.center {
+  display: flex;
+  justify-content: center;
+}
+
+.movie-content {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  
+  padding: 50px 30px;
+  font-size: 20px;
+
+
+}
+
+.params > * {
+  width: 100%;
+  padding-bottom: 30px;
+}
+
+
+.params-title {
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;  
+
+  font-size: 36px;
+}
+
+.params-title-type {
+  font-size: 16px;
+
+}
+
+.params-title-2 {
+  width: 100%;
+  font-size: 24px;
+}
+
+.params-rating {
+  display: flex;
+  flex-direction: column;
+}
+
+.rating {
+  font-size: 32px;
+  font-weight: 700;
+  color:rgb(202, 157, 9);
+}
+
+.votes {
+  font-size: 11px;
+  font-weight: 500;
+  color: rgb(109, 85, 5);
+}
+
+
+.carousel {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.carousel-root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 90%;
+}
+
+.control-dots {
+  display: none;
+}
+.control-arrow {
+  width: 50%;
+}
+
+.params-table {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+
+.movie-poster {
+
+  padding-right: 10px;
+}
+
+.logo-img {
+  height: 60px;
+}
+
+.logo-avatar {
+  height: 40px;
+}
+
+
+
+
+@media screen and (max-width: 900px) {
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .filter-panel {
+    height: auto;
+    width: 100%;
+  }
+
+  .checkboxes {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .movie-content {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 20px 10px;
+
+    position: relative;
+  }
+
+  .logo-img {
+    height: 30px;
+  }
+
+  .logo-avatar {
+    height: 30px;
+  }
+
+  .params-description {
+    font-size: 16px;
+  }
+
+  .movie-poster {
+    padding-bottom: 20px;
+  }
+}
+
